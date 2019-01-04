@@ -1,0 +1,10 @@
+{
+  "name": "cypress-angular-unit-test",
+  "version": "0.0.1",
+  "peerDependencies": {
+    "@angular/common": "^7.1.0",
+    "@angular/core": "^7.1.0",
+    "@bahmutov/add-typescript-to-cypress": "^2.0.0",
+    "@angular/platform-browser-dynamic": "^7.1.0"
+  }
+}

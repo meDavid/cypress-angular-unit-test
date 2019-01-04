@@ -94,6 +94,45 @@
           }
         }
       }
+    },
+    "cypress-angular-unit-test": {
+      "root": "projects/cypress-angular-unit-test",
+      "sourceRoot": "projects/cypress-angular-unit-test/src",
+      "projectType": "library",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/cypress-angular-unit-test/tsconfig.lib.json",
+            "project": "projects/cypress-angular-unit-test/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "project": "projects/cypress-angular-unit-test/ng-package.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/cypress-angular-unit-test/src/test.ts",
+            "tsConfig": "projects/cypress-angular-unit-test/tsconfig.spec.json",
+            "karmaConfig": "projects/cypress-angular-unit-test/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/cypress-angular-unit-test/tsconfig.lib.json",
+              "projects/cypress-angular-unit-test/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
     }
   },
   "defaultProject": "cypress-angular-unit-test-demo"
